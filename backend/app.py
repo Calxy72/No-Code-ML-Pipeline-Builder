@@ -27,43 +27,23 @@ def allowed_file(filename):
 def home():
     return {"status": "ok", "message": "Backend is running"}
 
-@app.route('/upload', methods=['POST', 'OPTIONS'])
+@app.route('/upload', methods=['POST'])
 def upload_file():
-
-    if request.method == 'OPTIONS':
-        return '', 204
-
     if 'file' not in request.files:
         return jsonify({'error': 'No file part'}), 400
 
     file = request.files['file']
+    filepath = f"/tmp/{secure_filename(file.filename)}"
+    file.save(filepath)
 
-    if file.filename == '':
-        return jsonify({'error': 'No selected file'}), 400
+    df = pd.read_csv(filepath)
 
-    filename = secure_filename(file.filename)
-    filepath = os.path.join('/tmp', filename)
+    return jsonify({
+        "success": True,
+        "rows": len(df),
+        "columns": df.columns.tolist()
+    })
 
-    try:
-        file.save(filepath)
-
-        if filename.endswith('.csv'):
-            df = pd.read_csv(filepath)
-        else:
-            df = pd.read_excel(filepath)
-
-        info = {
-            'rows': len(df),
-            'columns': len(df.columns),
-            'column_names': df.columns.tolist(),
-            'preview': df.head().to_dict('records'),
-            'dtypes': df.dtypes.astype(str).to_dict()
-        }
-
-        return jsonify({'success': True, 'data': info})
-
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
 
 
 @app.route('/preprocess', methods=['POST'])
