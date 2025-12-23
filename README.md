@@ -101,7 +101,7 @@ pip install -r requirements.txt
 python app.py
 
 # Server runs on http://localhost:5000
-
+```
 
 
 ## 📦 Dependencies(Frontend)
@@ -120,13 +120,16 @@ npm run dev         # Start development server
 npm run build       # Build for production
 npm run preview     # Preview production build
 ```
-
+# Video
+```bash
+https://drive.google.com/file/d/12HzJma48hpmgszvfsg6AMO89vbep3tsl/view?usp=drive_link
+```
 
 # Citation
 
 If you use this in your work, please cite:
 
-Demand Prediction System with XGBoost. (2024). GitHub Repository.
+No-Code ML Pipeline Builder. (2025). GitHub Repository.
 
 # Contact
 
