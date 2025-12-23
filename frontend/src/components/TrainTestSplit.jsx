@@ -22,7 +22,7 @@ const TrainTestSplit = ({ columns, filepath, onComplete }) => {
 
     setIsSplitting(true);
     try {
-      const response = await axios.post('http://localhost:5000/split', {
+      const response = await axios.post('${import.meta.env.VITE_API_URL}/split', {
         filepath: filepath,
         test_size: testSize,
         target_column: targetColumn

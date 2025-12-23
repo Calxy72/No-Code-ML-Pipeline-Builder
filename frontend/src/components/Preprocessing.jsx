@@ -31,7 +31,7 @@ const Preprocessing = ({ columns, filepath, onComplete }) => {
 
     setIsProcessing(true);
     try {
-      const response = await axios.post('http://localhost:5000/preprocess', {
+      const response = await axios.post('${import.meta.env.VITE_API_URL}/preprocess', {
         filepath: filepath,
         method: selectedMethod,
         columns: selectedColumns
