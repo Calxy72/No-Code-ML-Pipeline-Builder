@@ -19,6 +19,10 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@app.route("/")
+def home():
+    return {"status": "ok", "message": "Backend is running"}
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
