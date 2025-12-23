@@ -101,7 +101,7 @@ pip install -r requirements.txt
 python app.py
 
 # Server runs on http://localhost:5000
-
+```
 
 
 ## 📦 Dependencies(Frontend)
