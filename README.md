@@ -126,7 +126,7 @@ npm run preview     # Preview production build
 
 If you use this in your work, please cite:
 
-Demand Prediction System with XGBoost. (2024). GitHub Repository.
+No-Code ML Pipeline Builder. (2025). GitHub Repository.
 
 # Contact
 
