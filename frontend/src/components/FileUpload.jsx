@@ -9,9 +9,7 @@ const FileUpload = ({ onUploadComplete }) => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('${import.meta.env.VITE_API_URL}/upload', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      });
+      const response = await axios.post('${import.meta.env.VITE_API_URL}/upload', formData);
       onUploadComplete(response.data);
     } catch (error) {
       alert('Upload failed: ' + error.response?.data?.error || error.message);
