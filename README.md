@@ -120,7 +120,10 @@ npm run dev         # Start development server
 npm run build       # Build for production
 npm run preview     # Preview production build
 ```
-
+# Video
+```bash
+https://drive.google.com/file/d/12HzJma48hpmgszvfsg6AMO89vbep3tsl/view?usp=drive_link
+```
 
 # Citation
 
