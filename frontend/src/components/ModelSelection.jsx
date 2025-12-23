@@ -31,7 +31,7 @@ const ModelSelection = ({ splitData, targetColumn, onComplete }) => {
 
     setIsTraining(true);
     try {
-      const response = await axios.post('${import.meta.env.VITE_API_URL}/train', {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/train`, {
         model_name: selectedModel,
         train_path: splitData.train_path,
         test_path: splitData.test_path,
